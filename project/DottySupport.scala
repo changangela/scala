@@ -19,7 +19,8 @@ object DottySupport {
   lazy val commonSettings = Seq(
     scalacOptions ++= Seq(
       "-Ynew-collections", // Make Dotty aware of the 2.13 collections
-      "-language:implicitConversions" // Avoid a million warnings
+      "-language:implicitConversions", // Avoid a million warnings
+      "-Yexplicit-nulls"
     )
   )
   lazy val librarySettings = Seq(
