@@ -20,7 +20,8 @@ object DottySupport {
     scalacOptions ++= Seq(
       "-Ynew-collections", // Make Dotty aware of the 2.13 collections
       "-language:implicitConversions", // Avoid a million warnings
-      "-Yexplicit-nulls"
+      "-Yexplicit-nulls",
+      "-Yjava-interop-dont-nullify-outermost"
     )
   )
   lazy val librarySettings = Seq(
