@@ -96,21 +96,21 @@ class CodeWriter(writer: Writer) {
 
   def println(value: String): CodeWriter = print(value).newline
 
-  def print(value: Boolean): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Boolean): CodeWriter = print(String.valueOf(value))
 
-  def print(value: Byte): CodeWriter = print(String.valueOf(value.toInt).nn)
+  def print(value: Byte): CodeWriter = print(String.valueOf(value.toInt))
 
-  def print(value: Short): CodeWriter = print(String.valueOf(value.toInt).nn)
+  def print(value: Short): CodeWriter = print(String.valueOf(value.toInt))
 
-  def print(value: Char): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Char): CodeWriter = print(String.valueOf(value))
 
-  def print(value: Int): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Int): CodeWriter = print(String.valueOf(value))
 
-  def print(value: Long): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Long): CodeWriter = print(String.valueOf(value))
 
-  def print(value: Float): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Float): CodeWriter = print(String.valueOf(value))
 
-  def print(value: Double): CodeWriter = print(String.valueOf(value).nn)
+  def print(value: Double): CodeWriter = print(String.valueOf(value))
 
   def print(value: String): CodeWriter = {
     if (align) {
