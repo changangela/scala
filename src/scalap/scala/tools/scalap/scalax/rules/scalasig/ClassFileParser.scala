@@ -241,7 +241,7 @@ case class ClassFileHeader(
 case class ConstantPool(len: Int) {
   val size = len - 1
 
-  private val buffer = new scala.collection.mutable.ArrayBuffer[ConstantPool => Any]
+  private val buffer = new scala.collection.mutable.ArrayBuffer[(ConstantPool => Any) | Null]
   private val values = Array.fill[Option[Any]](size)(None)
 
   def isFull = buffer.length >= size
@@ -250,7 +250,7 @@ case class ConstantPool(len: Int) {
     // Note constant pool indices are 1-based
     val i = index - 1
     values(i) getOrElse {
-      val value = buffer(i)(this)
+      val value = buffer(i).nn(this)
       buffer(i) = null
       values(i) = Some(value)
       value
@@ -262,4 +262,3 @@ case class ConstantPool(len: Int) {
     this
   }
 }
-
